@@ -1,3 +1,4 @@
+import os
 def calculate_monthly_instalment(principal, interest, year):
     monthly_interest = interest / 100 / 12
     num = year * 12
@@ -26,20 +27,30 @@ def display_previous_calculations(loan_calculations):
     input("Press Enter to continue....")
 
 def edit_record(loan_calculations):
-    print("\nPrevious Loan Calculations:")
-   
-    for i , calculation in enumerate(loan_calculations,start=1):
-        print(str(i) + ". Principal: RM " + str(round(calculation['principal'],2)) 
-        + ",\n   Monthly Instalment: RM " + str(round(calculation['principal'],2))
-        + ",\n   Total Amount Payable: RM " + str(round(calculation['total_amount'],2))
-        + ",\n   DSR: " + str(round(calculation['dsr'],2)) + "%")
+    while True:
+        try:
+           print("\nPrevious Loan Calculations:")
+           
+           for i , calculation in enumerate(loan_calculations,start=1):
+               print(str(i) + ". Principal: RM " + str(round(calculation['principal'],2)) 
+               + ",\n   Monthly Instalment: RM " + str(round(calculation['principal'],2))
+               + ",\n   Total Amount Payable: RM " + str(round(calculation['total_amount'],2))
+               + ",\n   DSR: " + str(round(calculation['dsr'],2)) + "%")
 
-    print()
-    a=int(input("\nwhich record you want to delete :"))
-    del loan_calculations[a-1]
-    print("delete done!")
-    print() 
-    input("Press Enter to continue....")
+           print()
+           
+                    
+           a=int(input("\nwhich record you want to delete :"))
+           del loan_calculations[a-1]
+           print("delete done!")
+           print() 
+           input("Press Enter to continue....")
+           break
+        except:
+            print("Please insert again....")
+            input()
+            os.system("cls")
+
     
 
     
