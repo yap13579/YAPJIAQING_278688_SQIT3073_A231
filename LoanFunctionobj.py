@@ -18,12 +18,15 @@ def calculate_dsr(housing_loan, monthly_income, commitments):
 def display_previous_calculations(loan_calculations):
     print("\nPrevious Loan Calculations:")
     
-    for i , record in enumerate(loan_calculations,start=1):
-        print(str(i) + ". Principal: RM " + str(round(record['principal'],2)) 
-        + ",\n   Monthly Instalment: RM " + str(round(record['monthly_payment'],2))
-        + ",\n   Total Amount Payable: RM " + str(round(record['total_amount'],2))
-        + ",\n   DSR: " + str(round(record['dsr'],2)) + "%" 
-        + ",\n   Eligibility :" + str(record['eligibility']))
+    for record in loan_calculations:
+        i=1
+        print(str(i) + ". Principal: RM " + str(round(record.principal,2)) 
+        + ",\n   Monthly Instalment: RM " + str(round(record.monthly_payment,2))
+        + ",\n   Total Amount Payable: RM " + str(round(record.total_amount,2))
+        + ",\n   DSR: " + str(round(record.dsr,2)) + "%" 
+        + ",\n   Eligibility :" + str(record.eligibility))
+        i+=1
+
     print() 
     input("Press Enter to continue....")
 
@@ -32,12 +35,14 @@ def edit_record(loan_calculations):
         try:
            print("\nPrevious Loan Calculations:")
            
-           for i , record in enumerate(loan_calculations,start=1):
-                print(str(i) + ". Principal: RM " + str(round(record['principal'],2)) 
-                + ",\n   Monthly Instalment: RM " + str(round(record['monthly_payment'],2))
-                + ",\n   Total Amount Payable: RM " + str(round(record['total_amount'],2))
-                + ",\n   DSR: " + str(round(record['dsr'],2)) + "%" 
-                + ",\n   Eligibility :" + str(record['eligibility']))
+           for record in loan_calculations:
+               i=1
+               print(str(i) + ". Principal: RM " + str(round(record.principal,2)) 
+               + ",\n   Monthly Instalment: RM " + str(round(record.monthly_payment,2))
+               + ",\n   Total Amount Payable: RM " + str(round(record.total_amount,2))
+               + ",\n   DSR: " + str(round(record.dsr,2)) + "%" 
+               + ",\n   Eligibility :" + str(record.eligibility))
+               i+=1
 
            print()
            
@@ -53,7 +58,10 @@ def edit_record(loan_calculations):
             input()
             os.system("cls")
 
-    
-
-
-    
+class loan_record:
+    def __init__(self,principal,monthly_payment,total_amount,dsr,eligibility):
+        self.principal=principal
+        self.monthly_payment=monthly_payment
+        self.total_amount=total_amount
+        self.dsr=dsr
+        self.eligibility=eligibility
