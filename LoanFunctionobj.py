@@ -17,9 +17,9 @@ def calculate_dsr(housing_loan, monthly_income, commitments):
 
 def display_previous_calculations(loan_calculations):
     print("\nPrevious Loan Calculations:")
-    
+    i=1
     for record in loan_calculations:
-        i=1
+        
         print(str(i) + ". Principal: RM " + str(round(record.principal,2)) 
         + ",\n   Monthly Instalment: RM " + str(round(record.monthly_payment,2))
         + ",\n   Total Amount Payable: RM " + str(round(record.total_amount,2))
@@ -34,9 +34,9 @@ def edit_record(loan_calculations):
     while True:
         try:
            print("\nPrevious Loan Calculations:")
-           
+           i=1
            for record in loan_calculations:
-               i=1
+               
                print(str(i) + ". Principal: RM " + str(round(record.principal,2)) 
                + ",\n   Monthly Instalment: RM " + str(round(record.monthly_payment,2))
                + ",\n   Total Amount Payable: RM " + str(round(record.total_amount,2))
