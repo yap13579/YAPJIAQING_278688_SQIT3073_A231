@@ -53,6 +53,7 @@ while True:
             print() 
             input("Press Enter to continue....")
             break
+        
          except:
             print("Please insert again....")
             input()
