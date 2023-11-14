@@ -25,6 +25,7 @@ def display_previous_calculations(loan_calculations):
         + ",\n   Total Amount Payable: RM " + str(round(record.total_amount,2))
         + ",\n   DSR: " + str(round(record.dsr,2)) + "%" 
         + ",\n   Eligibility :" + str(record.eligibility))
+        print()
         i+=1
 
     print() 
@@ -42,6 +43,7 @@ def edit_record(loan_calculations):
                + ",\n   Total Amount Payable: RM " + str(round(record.total_amount,2))
                + ",\n   DSR: " + str(round(record.dsr,2)) + "%" 
                + ",\n   Eligibility :" + str(record.eligibility))
+               print()
                i+=1
 
            print()

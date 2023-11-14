@@ -32,6 +32,7 @@ def display_previous_calculations(loan_calculations):
         + ",\n   Total Amount Payable: RM " + str(round(each['total_amount'],2))
         + ",\n   DSR: " + str(round(each['dsr'],2)) + "%" 
         + ",\n   Eligibility :" + str(each['eligibility']))
+        print()
     print() 
     input("Press Enter to continue....")
 
@@ -48,7 +49,7 @@ def edit_record(loan_calculations):
                 + ",\n   Total Amount Payable: RM " + str(round(each['total_amount'],2))
                 + ",\n   DSR: " + str(round(each['dsr'],2)) + "%" 
                 + ",\n   Eligibility :" + str(each['eligibility']))
-
+                print()
            print()
            
                     
